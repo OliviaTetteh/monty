@@ -1,11 +1,13 @@
 #include "monty.h"
-
 /**
  * main - the main function
  * @argc: Number of command line arguments.
  * @argv: An array containing the arguments.
  * Return: Always Zero.
  */
+
+stack_t *head = NULL;
+
 int main(int argc, char **argv)
 {
 	if (argc < 2 || argc > 2)
@@ -21,7 +23,6 @@ int main(int argc, char **argv)
 void free_nodes(void)
 {
 	stack_t *tmp;
-	stack_t *head = NULL;
 
 	if (head == NULL)
 		return;
