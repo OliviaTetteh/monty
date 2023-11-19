@@ -18,20 +18,20 @@ void more_err(int error_code, ...)
 	switch (error_code)
 	{
 		case 6:
-			printf("L%d: can't pint, stack empty\n",
+			fprintf(stderr, "L%d: can't pint, stack empty\n",
 				va_arg(ag, int));
 			break;
 		case 7:
-			printf("L%d: can't pop an empty stack\n",
+			fprintf(stderr, "L%d: can't pop an empty stack\n",
 				va_arg(ag, int));
 			break;
 		case 8:
 			l_num = va_arg(ag, unsigned int);
 			op = va_arg(ag, char *);
-			printf("L%d: can't %s, stack too short\n", l_num, op);
+			fprintf(stderr, "L%d: can't %s, stack too short\n", l_num, op);
 			break;
 		case 9:
-			printf("L%d: division by zero\n",
+			fprintf(stderr, "L%d: division by zero\n",
 				va_arg(ag, unsigned int));
 			break;
 		default:
@@ -55,10 +55,10 @@ void string_err(int error_code, ...)
 	switch (error_code)
 	{
 		case 10:
-			printf("L%d: can't pchar, value out of range\n", l_num);
+			fprintf(stderr, "L%d: can't pchar, value out of range\n", l_num);
 			break;
 		case 11:
-			printf("L%d: can't pchar, stack empty\n", l_num);
+			fprintf(stderr, "L%d: can't pchar, stack empty\n", l_num);
 			break;
 		default:
 			break;
