@@ -1,5 +1,4 @@
 #include "monty.h"
-stack_t *head = NULL;
 
 /**
  * main - the main function
@@ -22,6 +21,7 @@ int main(int argc, char **argv)
 void free_nodes(void)
 {
 	stack_t *tmp;
+	stack_t *head = NULL;
 
 	if (head == NULL)
 		return;
